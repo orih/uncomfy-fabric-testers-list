@@ -1,8 +1,8 @@
 {
   "name": "Uncomfy Fabric Testers List",
-  "version": "0.1",
+  "version": "0.1.1",
   "manifest_version": 2,
-  "description": "Why do testers and groups line same level?",
+  "description": "Why do testers and groups stand in same level?",
   "author": "orih",
   "icons": {
     "16" : "images/icon-16.png",
@@ -11,12 +11,14 @@
   },
   "permissions": [
     "tabs",
-    "https://fabric.io/*/apps/*/beta/releases/*"
+    "https://fabric.io/*"
   ],
+  "background": {
+    "scripts": ["js/background.js"]
+  },
   "content_scripts": [{
-      "matches": ["https://fabric.io/*/apps/*/beta/releases/*"],
-      "js": ["js/jquery.min.js", "js/make-it-comfy.js"],
-      "run_at": "document_start"
+      "matches": ["https://fabric.io/*"],
+      "js": ["js/jquery.min.js", "js/make-it-comfy.js"]
   }],
   "browser_action": {
     "default_icon": "images/icon-128.png",
